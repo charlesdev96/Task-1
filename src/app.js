@@ -1,10 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const ip = require("ip");
 const axios = require("axios");
 
 // Replace 'YOUR_API_TOKEN' with your actual IPinfo API token
-const WEATHER_API = "a951e82e49ff463298a190403240107";
+const WEATHER_API = process.env.WEATHER_API;
 
 app.get("/api/hello", async (req, res) => {
   const visitorName = req.query.visitor_name || "Visitor";
